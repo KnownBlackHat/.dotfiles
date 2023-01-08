@@ -105,8 +105,11 @@ configure_prompt() {
             # PROMPT='${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}'
             # PROMPT=$'${debian_chroot:+($debian_chroot)}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%B%F{%(#.red.blue)}%n@%m%b%F{reset}:%B%F{%(#.blue.green)}%~%b%F{reset}%(#.#.$) '
 			# PROMPT="%B%F{green}%~ ${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))} %B%F{red}➤ "
-            PROMPT='%B%F{white}${GIT_STATUS} %B%F{yellow}%~%F{white}${VIRTUAL_ENV:+  $(basename $VIRTUAL_ENV)} %F{red}➤%{%}%F{green} '
-
+			if [ "$EUID" -eq 0 ]; then
+            PROMPT='%B%F{white}${GIT_STATUS} %B%F{yellow}%~%F{white}${VIRTUAL_ENV:+  $(basename $VIRTUAL_ENV)} %F{red}➤%{%} '
+			else 
+            PROMPT='%B%F{white}${GIT_STATUS} %B%F{yellow}%~%F{white}${VIRTUAL_ENV:+  $(basename $VIRTUAL_ENV)} %F{green}➤%{%} '
+			fi
             RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)'
             # RPROMPT=
             ;;
@@ -122,7 +125,7 @@ configure_prompt() {
 # These delimiters must not be modified. Thanks.
 # START KALI CONFIG VARIABLES
 PROMPT_ALTERNATIVE=oneline
-NEWLINE_BEFORE_PROMPT=no
+NEWLINE_BEFORE_PROMPT=yes
 # STOP KALI CONFIG VARIABLES
 
 if [ "$color_prompt" = yes ]; then
@@ -263,6 +266,8 @@ fi
 if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
-# synclient tapbutton1=1
+synclient tapbutton1=1
 alias tmux="tmux -u"
+#unset TMUX
+#tmux -u
 #redshift -x &> /dev/null && redshift -O 3500K &> /dev/null;
