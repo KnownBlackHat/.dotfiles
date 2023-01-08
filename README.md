@@ -10,11 +10,11 @@ mv /tmp/terminal-config/.zshrc ~/.zshrc
 ```
 
 > Install Tmux Red Theme 
-
+###### **NOTE: Use `prefix + shift + I` for module installation**
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm; mv /tmp/terminal-config/.tmux.conf ~/.tmux.conf
 ```
-###### **NOTE: Use `prefix + shift + I` for module installation**
+
 
 > Nvim init script installation
 
