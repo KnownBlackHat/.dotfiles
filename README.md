@@ -1,6 +1,6 @@
 # My Terminal Configs
 
-## Clone Repo in home dir
+## Clone Repo in `/tmp` dir
 ```bash
 git clone https://github.com/KnownBlackHat/terminal-config.git /tmp/terminal-config
 ```
