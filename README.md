@@ -14,7 +14,7 @@ mv /tmp/terminal-config/.zshrc ~/.zshrc
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm; mv /tmp/terminal-config/.tmux.conf ~/.tmux.conf
 ```
-######**NOTE: Use `prefix + shift + I` for module installation**
+**NOTE: Use `prefix + shift + I` for module installation**
 
 > Nvim init script installation
 
