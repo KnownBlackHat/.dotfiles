@@ -27,7 +27,7 @@ mkdir -p ~/.config/nvim && mv /tmp/terminal-config/init.vim  ~/.config/nvim/init
 mv /tmp/terminal-config/.vimrc ~/.vimrc
 ```
  
-> To Install Everything above in one line syntaxx
+## To Install Everything above in one line syntaxx
 ```bash
 git clone https://github.com/KnownBlackHat/terminal-config.git /tmp/terminal-config && mv /tmp/terminal-config/.zshrc ~/.zshrc && mv /tmp/terminal-config/.tmux.conf ~/.tmux.conf && mkdir -p ~/.config/nvim && mv /tmp/terminal-config/init.vim  ~/.config/nvim/init.vim && mv /tmp/terminal-config/.vimrc ~/.vimrc
 ```
