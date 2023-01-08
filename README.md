@@ -1,24 +1,29 @@
-# My Tmux-configs (RED Theme)
+# My Terminal Configs
 
 ## Clone Repo in home dir
 ```bash
-git clone https://github.com/KnownBlackHat/tmux-config.git ~/tmux-config
+git clone https://github.com/KnownBlackHat/terminal-config.git ~/terminal-config
+```
+> ZSH Shell Config installations
+```bash
+mv ~/terminal-config/.zshrc ~/.zshrc
 ```
 
-> Install Theme 
+> Install Tmux Red Theme 
 
 ```bash
-mv ~/tmux-config/.tmux.conf ~/.tmux.conf
+mv ~/terminal-config/.tmux.conf ~/.tmux.conf
 ```
 
 > Nvim init script installation
 
 ```bash
-mkdir -p ~/.config/nvim && mv ~/tmux-config/init.vim  ~/.config/nvim/init.vim 
+mkdir -p ~/.config/nvim && mv ~/terminal-config/init.vim  ~/.config/nvim/init.vim 
 ```
 
 > Vim init script installation
 
 ```bash
-mv ~/tmux-config/.vimrc ~/.vimrc
+mv ~/terminal-config/.vimrc ~/.vimrc
 ```
+ 
