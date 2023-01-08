@@ -105,7 +105,7 @@ configure_prompt() {
             # PROMPT='${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}'
             # PROMPT=$'${debian_chroot:+($debian_chroot)}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%B%F{%(#.red.blue)}%n@%m%b%F{reset}:%B%F{%(#.blue.green)}%~%b%F{reset}%(#.#.$) '
 			# PROMPT="%B%F{green}%~ ${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))} %B%F{red}➤ "
-            PROMPT='%B%F{yellow}%~%F{blue}${VIRTUAL_ENV:+  $(basename $VIRTUAL_ENV)}  %F{red}➤%{%} '
+            PROMPT='%B%F{white}${GIT_STATUS} %B%F{yellow}%~%F{white}${VIRTUAL_ENV:+  $(basename $VIRTUAL_ENV)} %F{red}➤%{%} '
 
             RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)'
             # RPROMPT=
@@ -206,6 +206,8 @@ esac
 precmd() {
     # Print the previously configured title
     print -Pnr -- "$TERM_TITLE"
+
+    GIT_STATUS=$(git branch 2> /dev/null |grep -e "^*"|sed "s/*/$(echo '\ue0a0')/")
 
     # Print a new line before the prompt, but only if it is not the first line
     if [ "$NEWLINE_BEFORE_PROMPT" = yes ]; then
