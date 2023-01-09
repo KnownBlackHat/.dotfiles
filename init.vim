@@ -31,9 +31,11 @@ Plug 'https://github.com/nvim-lua/popup.nvim' " popup -> Telescope installation
 
 call plug#end()                                                                   
 
-                                                                                  
-nnoremap <C-f> :NERDTreeFocus<CR>                                                 
-nnoremap <C-n> :NERDTree<CR>                                                      
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"
+
+
+nnoremap <C-f> :NERDTreeFocus<CR>                                                   
 nnoremap <C-d> :NERDTreeToggle<CR>                                                
 nnoremap <C-t> :Telescope<CR>                                                
 nnoremap <C-q> :TagbarToggle<CR>                                                  
