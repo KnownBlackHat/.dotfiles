@@ -25,11 +25,13 @@ Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion C-y -> selects au
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation           
-Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + n for multiple cursors                                                                         
-Plug 'https://github.com/nvim-telescope/telescope.nvim' " Telescope installation
+Plug 'https://github.com/terryma/vim-multiple-cursors' " C-n for multiple cursors 
+Plug 'https://github.com/nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } " Telescope installation
 Plug 'https://github.com/nvim-lua/plenary.nvim' " plenary -> Telescope installation
 Plug 'https://github.com/nvim-lua/popup.nvim' " popup -> Telescope installation
+Plug 'https://github.com/nvim-treesitter/nvim-treesitter' " treesitter -> Telescope installation
 call plug#end()                                                                   
+
 
                                                                                  
 let g:NERDTreeDirArrowExpandable="+"
