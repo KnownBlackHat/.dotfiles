@@ -266,7 +266,7 @@ fi
 if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
-synclient tapbutton1=1
+#synclient tapbutton1=1
 alias tmux="tmux -u"
 #unset TMUX
 #tmux -u
