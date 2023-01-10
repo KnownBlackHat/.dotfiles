@@ -38,11 +38,7 @@ call plug#end()
 
 
 " Telescope default color function
-function! s:setup()
-	hi! link NormalFloat Normal
-endfunc
-
-call s:setup()
+:hi! link NormalFloat Normal
 
 " Telescope Customization
 lua << EOF
