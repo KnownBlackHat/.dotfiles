@@ -30,15 +30,37 @@ Plug 'https://github.com/nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } " Te
 Plug 'https://github.com/nvim-lua/plenary.nvim' " plenary -> Telescope installation
 Plug 'https://github.com/nvim-lua/popup.nvim' " popup -> Telescope installation
 Plug 'https://github.com/nvim-treesitter/nvim-treesitter' " treesitter -> Telescope installation
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " fzf-native -> Telescope installation
+Plug 'fannheyward/telescope-coc.nvim' " coc -> Telescope installation
+Plug 'kyazdani42/nvim-web-devicons' " Devicons
+
 call plug#end()                                                                   
 
+
+" Telescope default color function
+function! s:setup()
+	hi! link NormalFloat Normal
+endfunc
+
+call s:setup()
+
+" Telescope Customization
+lua << EOF
+require('telescope').setup{
+	defaults = {
+		prompt_prefix = "🔍 "
+		}
+ }
+require('telescope').load_extension('fzf')
+require('telescope').load_extension('coc')
+EOF
 
                                                                                  
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 let g:airline_powerline_fonts = 1
 let g:airline_theme='term'
-
+let mapleader=' '
 
 nmap <C-f> :NERDTreeFocus<CR> 
 nmap <C-d> :NERDTreeToggle<CR> 
@@ -46,3 +68,4 @@ nmap <C-t> :Telescope<CR>
 nmap <C-q> :TagbarToggle<CR>                                                  
 nmap <Leader>f :Telescope find_files<CR>
 nmap <Leader>g :Telescope live_grep<CR>                                                
+nmap <Leader>b :Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top<CR>                                                
