@@ -33,7 +33,7 @@ Plug 'https://github.com/nvim-treesitter/nvim-treesitter' " treesitter -> Telesc
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " fzf-native -> Telescope installation
 Plug 'fannheyward/telescope-coc.nvim' " coc -> Telescope installation
 Plug 'kyazdani42/nvim-web-devicons' " Devicons
-
+Plug 'mattn/emmet-vim' " Html emmet 
 call plug#end()                                                                   
 
 
@@ -51,7 +51,7 @@ require('telescope').load_extension('fzf')
 require('telescope').load_extension('coc')
 EOF
 
-                                                                                 
+let g:user_emmet_leader_key=','
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 let g:airline_powerline_fonts = 1
