@@ -57,6 +57,7 @@ let g:NERDTreeDirArrowCollapsible="~"
 let g:airline_powerline_fonts = 1
 let g:airline_theme='term'
 let mapleader=' '
+let g:multi_cursor_quit_key='<Esc>'
 
 nmap <C-f> :NERDTreeFocus<CR> 
 nmap <C-d> :NERDTreeToggle<CR> 
