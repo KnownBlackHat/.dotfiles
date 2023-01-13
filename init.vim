@@ -51,6 +51,7 @@ require('telescope').load_extension('fzf')
 require('telescope').load_extension('coc')
 EOF
 
+au FileType html let b:coc_root_patterns = ['.git', '.env', 'tailwind.config.js', 'tailwind.config.cjs']
 let g:user_emmet_leader_key=','
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
