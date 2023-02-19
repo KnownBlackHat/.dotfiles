@@ -9,6 +9,7 @@
 :set wrap
 :set laststatus=2
 :set encoding=utf-8
+:syntax on
 
 
 call plug#begin()                                                         
