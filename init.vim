@@ -35,7 +35,8 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " fzf-native -
 Plug 'fannheyward/telescope-coc.nvim' " coc -> Telescope installation
 Plug 'kyazdani42/nvim-web-devicons' " Devicons
 Plug 'mattn/emmet-vim' " Html emmet 
-call plug#end()                                                                   
+Plug 'https://github.com/github/copilot.vim' " Github's Co-pilot
+call plug#end()                           
 
 
 " Telescope default color function
