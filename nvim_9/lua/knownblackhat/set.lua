@@ -23,7 +23,7 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
--- vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.syntax = "on"
@@ -36,3 +36,10 @@ vim.g.airline_powerline_fonts = 1
 
 vim.g.user_emmet_leader_key=','
 
+vim.g.nvim_tree_ignore = { ".git", "node_modules", ".cache" }
+
+vim.api.nvim_create_autocmd("CursorMoved", {
+    command = ":silent lua vim.diagnostic.open_float()"
+})
+
+vim.opt.colorcolumn = "80"
