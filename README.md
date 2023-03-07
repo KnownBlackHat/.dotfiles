@@ -18,7 +18,8 @@ mv /tmp/terminal-config/.tmux.conf ~/.tmux.conf
 ## Nvim 9 Installation
 > After executing following command, use `PackerSync` nvim command after sourcing packer.lua
 ```bash
-rm -rf ~/.config/nvim; mkdir -p ~/.config/nvim && mv /tmp/terminal-config/nvim_9/* ~/.config/nvim
+rm -rf ~/.config/nvim; git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim && mkdir -p ~/.config/nvim && mv /tmp/terminal-config/nvim_9/* ~/.config/nvim
 ```
 
 ## Nvim Stable Installation
