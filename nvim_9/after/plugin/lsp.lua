@@ -16,6 +16,11 @@ lsp.setup_nvim_cmp({
   })
 })
 
+cmp.setup({   window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    }})
+
 
 -- When you don't have mason.nvim installed
 -- You'll need to list the servers installed in your system
