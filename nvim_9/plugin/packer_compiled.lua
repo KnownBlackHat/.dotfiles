@@ -164,11 +164,6 @@ _G.packer_plugins = {
     path = "/home/kali/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["rose-pine"] = {
-    loaded = true,
-    path = "/home/kali/.local/share/nvim/site/pack/packer/start/rose-pine",
-    url = "https://github.com/rose-pine/neovim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/kali/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -193,6 +188,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kali/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-multiple-cursors"] = {
+    loaded = true,
+    path = "/home/kali/.local/share/nvim/site/pack/packer/start/vim-multiple-cursors",
+    url = "https://github.com/terryma/vim-multiple-cursors"
   }
 }
 

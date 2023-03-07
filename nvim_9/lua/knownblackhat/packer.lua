@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
     use('vim-airline/vim-airline-themes')
     use('vim-airline/vim-airline')
     use('mattn/emmet-vim')
-    use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use('terryma/vim-multiple-cursors')
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',

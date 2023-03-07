@@ -33,8 +33,6 @@ vim.g.mapleader = " "
 
 vim.g.airline_powerline_fonts = 1
 
-vim.g.user_emmet_leader_key=','
-
 vim.g.nvim_tree_ignore = { ".git", "node_modules", ".cache" }
 
 vim.api.nvim_create_autocmd("CursorMoved", {
