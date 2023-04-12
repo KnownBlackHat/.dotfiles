@@ -21,6 +21,9 @@ cmp.setup({   window = {
         documentation = cmp.config.window.bordered(),
     }})
 
+lsp.on_attach(function (client, bufnr)
+    local opts = {buffer = bufnr, remap = false}
+    vim.keymap.set("n","<leader>vca", function() vim.lsp.buf.code_action() end, opts)
 
 -- When you don't have mason.nvim installed
 -- You'll need to list the servers installed in your system
