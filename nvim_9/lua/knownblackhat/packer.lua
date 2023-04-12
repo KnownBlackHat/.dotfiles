@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
     use('vim-airline/vim-airline-themes')
     use('vim-airline/vim-airline')
     use('mattn/emmet-vim')
+    use('tpope/vim-fugitive')
     use ('nvim-treesitter/nvim-treesitter-context')
     use('terryma/vim-multiple-cursors')
     use {
