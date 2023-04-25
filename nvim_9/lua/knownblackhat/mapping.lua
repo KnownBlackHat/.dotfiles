@@ -20,3 +20,5 @@ vim.keymap.set("n", "<C-i>", vim.lsp.buf.hover)
 vim.g.multi_cursor_quit_key='<Tab>'
 
 vim.g.user_emmet_leader_key=','
+
+vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
