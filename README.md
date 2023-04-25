@@ -28,7 +28,7 @@ rm -rf ~/.config/nvim; git clone --depth 1 https://github.com/wbthomason/packer.
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' && mkdir -p ~/.config/nvim && mv /tmp/terminal-config/init.vim  ~/.config/nvim/init.vim 
 ```
 ## Xfce4 Panel Config
->**Warning: Using this might change you current xfce settings
+>**Warning: Using this might change you current xfce settings**
 ```bash
 mv /tmp/terminal-config/xfce4/* ~/.config/xfce4/
 ```
