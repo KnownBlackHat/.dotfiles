@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="configver" type="int" value="2"/>
+  <property name="panels" type="array">
+    <value type="int" value="1"/>
+    <value type="int" value="2"/>
+    <property name="panel-1" type="empty">
+      <property name="position" type="string" value="p=6;x=0;y=0"/>
+      <property name="length" type="uint" value="1"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="size" type="uint" value="64"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="1"/>
+      </property>
+      <property name="icon-size" type="uint" value="0"/>
+      <property name="background-style" type="uint" value="1"/>
+      <property name="background-rgba" type="array">
+        <value type="string" value="xfce4-terminal-emulator.desktop"/>
+        <value type="string" value="xfce4-terminal-emulator.desktop"/>
+        <value type="double" value="1"/>
+        <value type="double" value="0"/>
+      </property>
+      <property name="disable-struts" type="bool" value="false"/>
+      <property name="nrows" type="uint" value="1"/>
+      <property name="autohide-behavior" type="uint" value="1"/>
+      <property name="mode" type="uint" value="1"/>
+    </property>
+    <property name="panel-2" type="empty">
+      <property name="position" type="string" value="p=2;x=1298;y=25"/>
+      <property name="size" type="uint" value="30"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="length" type="uint" value="1"/>
+      <property name="disable-struts" type="bool" value="true"/>
+      <property name="background-style" type="uint" value="1"/>
+      <property name="background-rgba" type="array">
+        <value type="double" value="1"/>
+        <value type="double" value="1"/>
+        <value type="double" value="1"/>
+        <value type="double" value="0"/>
+      </property>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="5"/>
+        <value type="int" value="7"/>
+        <value type="int" value="23"/>
+        <value type="int" value="14"/>
+        <value type="int" value="13"/>
+        <value type="int" value="21"/>
+        <value type="int" value="22"/>
+        <value type="int" value="24"/>
+        <value type="int" value="25"/>
+        <value type="int" value="26"/>
+      </property>
+      <property name="autohide-behavior" type="uint" value="1"/>
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-1" type="string" value="whiskermenu"/>
+    <property name="plugin-900" type="string" value="pager">
+      <property name="miniature-view" type="bool" value="true"/>
+      <property name="rows" type="uint" value="2"/>
+    </property>
+    <property name="plugin-2200" type="string" value="actions">
+      <property name="appearance" type="uint" value="0"/>
+      <property name="items" type="array">
+        <value type="string" value="-lock-screen"/>
+        <value type="string" value="-switch-user"/>
+        <value type="string" value="-separator"/>
+        <value type="string" value="-suspend"/>
+        <value type="string" value="-hibernate"/>
+        <value type="string" value="-hybrid-sleep"/>
+        <value type="string" value="-separator"/>
+        <value type="string" value="-shutdown"/>
+        <value type="string" value="-restart"/>
+        <value type="string" value="-separator"/>
+        <value type="string" value="+logout"/>
+        <value type="string" value="-logout-dialog"/>
+      </property>
+    </property>
+    <property name="plugin-5" type="string" value="clock">
+      <property name="tooltip-format" type="string" value="%A %d %B %Y"/>
+      <property name="digital-format" type="string" value="%_H:%M"/>
+      <property name="timezone" type="string" value=""/>
+      <property name="digital-time-format" type="string" value="%_H:%M"/>
+      <property name="digital-layout" type="uint" value="3"/>
+    </property>
+    <property name="plugin-7" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-13" type="string" value="notification-plugin"/>
+    <property name="plugin-23" type="string" value="genmon"/>
+    <property name="plugin-14" type="string" value="systray">
+      <property name="known-legacy-items" type="array">
+        <value type="string" value="requesting an ethernet network address for “wired connection 1”…"/>
+        <value type="string" value="kazam"/>
+        <value type="string" value="thunar"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="ethernet network connection “wired connection 1” active"/>
+      </property>
+      <property name="known-items" type="array">
+        <value type="string" value="discord1"/>
+      </property>
+    </property>
+    <property name="plugin-21" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="mpris-players" type="string" value="chromium.instance16531;firefox.instance10001;firefox.instance10449;firefox.instance106591;firefox.instance107050;firefox.instance10784;firefox.instance114931;firefox.instance11496;firefox.instance115893;firefox.instance1187;firefox.instance1373;firefox.instance1422;firefox.instance1433;firefox.instance1440;firefox.instance1441;firefox.instance1445;firefox.instance1447;firefox.instance145033;firefox.instance1451;firefox.instance1466;firefox.instance1474;firefox.instance147668;firefox.instance1482;firefox.instance1485;firefox.instance1491;firefox.instance1497;firefox.instance1508;firefox.instance1509;firefox.instance1514;firefox.instance1516;firefox.instance1523;firefox.instance1529;firefox.instance1532;firefox.instance155205;firefox.instance1560;firefox.instance159107;firefox.instance1592;firefox.instance161610;firefox.instance1621;firefox.instance1665;firefox.instance1666;firefox.instance1682;firefox.instance17553;firefox.instance1778;firefox.instance1808;firefox.instance1828;firefox.instance1833;firefox.instance1854;firefox.instance1857;firefox.instance1880;firefox.instance1888;firefox.instance1897;firefox.instance1941;firefox.instance1975;firefox.instance1982;firefox.instance2053;firefox.instance2066;firefox.instance2083;firefox.instance21145;firefox.instance214477;firefox.instance2158;firefox.instance2219;firefox.instance22773;firefox.instance22786;firefox.instance2333;firefox.instance2472;firefox.instance256385;firefox.instance2635;firefox.instance27115;firefox.instance284957;firefox.instance286685;firefox.instance294963;firefox.instance301245;firefox.instance3325;firefox.instance3638;firefox.instance3836;firefox.instance44986;firefox.instance52772;firefox.instance5724;firefox.instance57272;firefox.instance65913;firefox.instance6765;firefox.instance7204;firefox.instance72637;firefox.instance83375;firefox.instance93992;firefox.instance97016;firefox.instance97192"/>
+    </property>
+    <property name="plugin-22" type="string" value="power-manager-plugin"/>
+    <property name="plugin-24" type="string" value="separator"/>
+    <property name="plugin-25" type="string" value="actions">
+      <property name="appearance" type="uint" value="0"/>
+      <property name="items" type="array">
+        <value type="string" value="+lock-screen"/>
+        <value type="string" value="-switch-user"/>
+        <value type="string" value="-separator"/>
+        <value type="string" value="-suspend"/>
+        <value type="string" value="-hibernate"/>
+        <value type="string" value="-hybrid-sleep"/>
+        <value type="string" value="-separator"/>
+        <value type="string" value="+shutdown"/>
+        <value type="string" value="-restart"/>
+        <value type="string" value="-separator"/>
+        <value type="string" value="+logout"/>
+        <value type="string" value="-logout-dialog"/>
+      </property>
+    </property>
+    <property name="plugin-26" type="string" value="pager">
+      <property name="rows" type="uint" value="1"/>
+      <property name="miniature-view" type="bool" value="false"/>
+      <property name="numbering" type="bool" value="false"/>
+    </property>
+  </property>
+</channel>
