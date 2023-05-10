@@ -40,3 +40,4 @@ vim.api.nvim_create_autocmd("CursorMoved", {
 })
 
 vim.opt.colorcolumn = "80"
+vim.g.copilot_enabled = false
