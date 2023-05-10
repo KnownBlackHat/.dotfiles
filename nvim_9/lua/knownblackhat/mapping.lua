@@ -15,7 +15,7 @@ vim.keymap.set("n", "Y", "\"+Y")
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
-vim.keymap.set("n", "<C-i>", vim.lsp.buf.hover)
+vim.keymap.set("n", "<leader><Tab>", vim.lsp.buf.hover)
 
 vim.g.multi_cursor_quit_key='<Tab>'
 
