@@ -22,3 +22,6 @@ vim.g.multi_cursor_quit_key='<Tab>'
 vim.g.user_emmet_leader_key=','
 
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
+
+vim.keymap.set("n", "gr", "<cmd>diffget //2<CR>")
+vim.keymap.set("n", "gu", "<cmd>diffget //3<CR>")
