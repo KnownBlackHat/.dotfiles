@@ -22,7 +22,6 @@ return require('packer').startup(function(use)
     use('lukas-reineke/indent-blankline.nvim')
     use {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
         requires = {
             -- LSP Support
             {'neovim/nvim-lspconfig'},             -- Required
