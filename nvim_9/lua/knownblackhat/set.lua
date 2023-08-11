@@ -43,4 +43,3 @@ vim.diagnostic.config({ virtual_text = true })
 vim.opt.colorcolumn = "80"
 vim.g.copilot_enabled = false
 vim.g.netrw_banner = 0
-vim.api.nvim_set_hl(0, 'SignColumn', { bg='#1f1e1e' })
