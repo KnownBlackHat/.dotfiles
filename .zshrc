@@ -271,3 +271,4 @@ alias tmux="tmux -u"
 #unset TMUX
 #tmux -u
 #redshift -x &> /dev/null && redshift -O 3500K &> /dev/null;
+export LESS_TERMCAP_so=$'\E[38;5;016m\E[48;5;248m'
