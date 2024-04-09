@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
     use ('nvim-treesitter/nvim-treesitter-context')
     use('terryma/vim-multiple-cursors')
     use('lukas-reineke/indent-blankline.nvim')
+    use('dstein64/vim-startuptime')
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {

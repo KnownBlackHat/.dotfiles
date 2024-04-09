@@ -38,8 +38,8 @@ vim.g.nvim_tree_ignore = { ".git", "node_modules", ".cache" }
 -- vim.api.nvim_create_autocmd("CursorMoved", {
 --     command = ":silent lua vim.diagnostic.open_float()"
 -- })
-vim.diagnostic.config({ virtual_text = true })
 
 vim.opt.colorcolumn = "80"
 vim.g.copilot_enabled = false
+
 vim.g.netrw_banner = 0
