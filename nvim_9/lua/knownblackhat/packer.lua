@@ -1,6 +1,12 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+    use({
+        "stevearc/conform.nvim",
+        config = function()
+            require("conform").setup()
+        end,
+    })
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
@@ -22,7 +28,7 @@ return require('packer').startup(function(use)
     use('lukas-reineke/indent-blankline.nvim')
     use('dstein64/vim-startuptime')
     use {
-        'VonHeikemen/lsp-zero.nvim',
+        'VonHeikemen/lsp-zero.nvim', branch = 'v2.x',
         requires = {
             -- LSP Support
             {'neovim/nvim-lspconfig'},             -- Required
