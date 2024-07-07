@@ -271,4 +271,16 @@ alias tmux="tmux -u"
 #unset TMUX
 #tmux -u
 #redshift -x &> /dev/null && redshift -O 3500K &> /dev/null;
-export LESS_TERMCAP_so=$'\E[38;5;016m\E[48;5;248m'
+export LESS_TERMCAP_so=$'\E[38;5;016m\E[48;5;248m'    # begin standout-mode - info box (yellow foreground, grey background)
+
+# bun completions
+[ -s "/home/knownblackhat/.bun/_bun" ] && source "/home/knownblackhat/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+. "$HOME/.cargo/env"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+source /usr/share/doc/fzf/examples/completion.zsh
