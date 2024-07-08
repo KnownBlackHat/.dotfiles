@@ -1,0 +1,22 @@
+#set wallpaper
+wallpaper_img=`find /home/knownblackhat/.wallpapers/* -type f | shuf -n 1`
+xwallpaper --zoom $wallpaper_img
+# Sync font color with wallpaper
+wal -c
+wal -i $wallpaper_img
+while true; do
+    charge_status=`cat /sys/class/power_supply/BAT0/status` 
+    if [ "$charge_status" = 'Charging' ]; then
+        emoji="⚡️"
+    else
+        emoji="🔋"
+    fi
+    xsetroot -name " $emoji `cat /sys/class/power_supply/BAT0/capacity`% | `date +'%F %R'` "
+    sleep 1
+done &
+
+xcompmgr &
+exec dwm
+
+
+xdotool key super+F5
