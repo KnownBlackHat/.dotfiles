@@ -1,5 +1,6 @@
 # Terminal Configs
-
+> [!IMPORTANT]
+> Use [GNU Stow](https://www.gnu.org/software/stow/) to stow away the dot files.
 ## Install Tmux
 > Use `prefix + shift + I` for module installation
 
