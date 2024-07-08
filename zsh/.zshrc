@@ -279,8 +279,9 @@ export LESS_TERMCAP_so=$'\E[38;5;016m\E[48;5;248m'    # begin standout-mode - in
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-. "$HOME/.cargo/env"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-source /usr/share/doc/fzf/examples/completion.zsh
+
+[ -s "/usr/share/doc/fzf/examples/completion.zsh" ] && source "/usr/share/doc/fzf/examples/completion.zsh" 
+[ -s "$HOME/.cargo/env" ] && source "$HOME/.cargo/env" 
