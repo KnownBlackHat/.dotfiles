@@ -26,7 +26,7 @@ vim.keymap.set("n", "<leader>j", "<cmd>cprev<CR>")
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlighting when yanking (copying) text",
-    group = vim.api.nvim_create_augroup("kickstart-highlight-yank", {clear = true}),
+    group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
     callback = function()
         vim.highlight.on_yank()
     end,
@@ -36,9 +36,8 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<leader><Tab>", vim.lsp.buf.hover)
 
-vim.g.multi_cursor_quit_key='<Tab>'
+vim.g.multi_cursor_quit_key = '<Tab>'
 
-vim.g.user_emmet_leader_key=','
+vim.g.user_emmet_leader_key = ','
 
-vim.api.nvim_set_keymap("i", "<C-K>", "copilot#Accept('<CR>')", {expr=true, silent=true})
-
+vim.api.nvim_set_keymap("i", "<C-S-K>", "copilot#Accept('<CR>')", { expr = true, silent = true })
