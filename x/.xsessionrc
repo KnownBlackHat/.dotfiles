@@ -22,3 +22,5 @@ wal -i $wallpaper_img
 
 
 # xdotool key super+F3
+
+[ -s "$HOME/.xprofile" ] && source "$HOME/.xprofile"

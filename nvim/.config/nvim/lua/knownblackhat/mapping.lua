@@ -7,13 +7,13 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("x", "<leader>p", "\"_dP")
+-- selected text gets deleted and goes to _ (black hole) register and the do before paste
+vim.keymap.set("v", "p", "\"_dP")
 
 vim.keymap.set("n", "y", "\"+y")
 vim.keymap.set("v", "y", "\"+y")
 vim.keymap.set("n", "Y", "\"+Y")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-vim.keymap.set("i", "jj", "<Esc>")
 
 -- Disabling arrow key
 vim.keymap.set("n", "<left>", "<cmd>echo 'Use h to move!!'<CR>")

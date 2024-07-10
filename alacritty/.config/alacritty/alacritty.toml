@@ -19,7 +19,7 @@ bindings = [
 ]
 
 [font]
-size = 10.0
+size = 8.0
 
 [font.bold]
 style = "Bold"
