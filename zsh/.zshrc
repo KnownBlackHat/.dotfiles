@@ -286,4 +286,4 @@ export PYENV_ROOT="$HOME/.pyenv"
 [ -s "$HOME/.cargo/env" ] && source "$HOME/.cargo/env" 
 
 # Enable vim mode
-set -o vi
+# set -o vi
