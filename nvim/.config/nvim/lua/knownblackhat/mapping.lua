@@ -40,4 +40,4 @@ vim.g.multi_cursor_quit_key = '<Tab>'
 
 vim.g.user_emmet_leader_key = ','
 
-vim.api.nvim_set_keymap("i", "<C-S-K>", "copilot#Accept('<CR>')", { expr = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-K>", "copilot#Accept('<CR>')", { expr = true, silent = true })
