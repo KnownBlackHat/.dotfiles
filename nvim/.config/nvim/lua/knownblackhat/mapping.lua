@@ -21,8 +21,8 @@ vim.keymap.set("n", "<right>", "<cmd>echo 'Use l to move!!'<CR>")
 vim.keymap.set("n", "<up>", "<cmd>echo 'Use k to move!!'<CR>")
 vim.keymap.set("n", "<down>", "<cmd>echo 'Use j to move!!'<CR>")
 
-vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>")
-vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>")
+vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>")
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlighting when yanking (copying) text",
