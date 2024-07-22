@@ -284,6 +284,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 
 [ -s "/usr/share/doc/fzf/examples/completion.zsh" ] && source "/usr/share/doc/fzf/examples/completion.zsh" 
 [ -s "$HOME/.cargo/env" ] && source "$HOME/.cargo/env" 
+[ -s "`which pyenv`" ] && eval "$(pyenv init -)"
 
 # Enable vim mode
 # set -o vi
