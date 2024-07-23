@@ -60,7 +60,7 @@ bindsym $mod+Shift+Print --release exec scrot --freeze -s /tmp/screenshot.png -e
 bindsym $mod+Print --release exec scrot --freeze -s /tmp/screenshot.png -e 'curl -s -F "image=@$f" https://api.imgur.com/3/upload | tee /tmp/imgur.log |jq -r .data.link | xclip -selection clipboard && notify-send "Image 🔗 ready on clipboard 📋"'
 
 # Switch to greeter
-bindsym $mod+Escape exec --no-startup-id dm-tools switch-to-greeter
+bindsym $mod+Escape exec --no-startup-id dm-tool switch-to-greeter
 
 # kill focused window
 bindsym $mod+Shift+q kill
