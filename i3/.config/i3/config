@@ -26,6 +26,10 @@ font pango:Meslo LGM Nerd Font 11
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+# default init
+bindsym $mod + grave exec redshift -x && redshift -O 3500 && xbacklight -inc 100
+bindsym $mod + Shift+ asciitilde exec redshift -x && redshift -O 3500 && xbacklight -inc 100 && xbacklight -dec 99.9
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
