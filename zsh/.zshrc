@@ -288,3 +288,4 @@ export PYENV_ROOT="$HOME/.pyenv"
 
 # Enable vim mode
 # set -o vi
+export MANPAGER='nvim +Man!'
