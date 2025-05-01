@@ -11,7 +11,9 @@
 
 set $mod Mod4
 exec_always --no-startup-id picom
-exec_always --no-startup-id pkill polybar;polybar
+# exec_always --no-startup-id pkill polybar;polybar
+exec_always killall polybar
+exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec_always --no-startup-id pkill autotiling;/home/knownblackhat/.pyenv/shims/autotiling
 exec_always feh --bg-scale `curl 'https://wallhaven.cc/api/v1/search?q=digital+art&sorting=random&apikey=CwQ93vajig3xRPSnkFotEsVeEYzRaAp8' -s| jq .data[0].path -r`
 
