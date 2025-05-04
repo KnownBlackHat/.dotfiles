@@ -212,12 +212,12 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # bindsym Mod1+Shift+9 move container to workspace number $ws19
 # bindsym Mod1+Shift+0 move container to workspace number $ws20
 
-bindsym Mod1+1 focus output eDP-1
-bindsym Mod1+2 focus output DP-1-0
+bindsym Mod1+1 focus output DP-1-0
+bindsym Mod1+2 focus output eDP-1
 bindsym Mod1+3 focus output HDMI-1-0
 
-bindsym Mod1+Shift+1 move workspace to output eDP-1
-bindsym Mod1+Shift+2 move workspace to output DP-1-0
+bindsym Mod1+Shift+1 move workspace to output DP-1-0
+bindsym Mod1+Shift+2 move workspace to output eDP-1
 bindsym Mod1+Shift+3 move workspace to output HDMI-1-0
 
 # reload the configuration file
