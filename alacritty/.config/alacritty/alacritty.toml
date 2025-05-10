@@ -16,6 +16,7 @@ bindings = [
     {key = '+', mods='Control', action='IncreaseFontSize'},
     {key = '-', mods='Control', action='DecreaseFontSize'},
     {key = '0', mods='Control', action='ResetFontSize'},
+    {key = "f", mods = "Control", chars = "~/tmux-sessionizer\n"}
 ]
 
 [font]
@@ -33,3 +34,4 @@ style = "Italic"
 [font.normal]
 style = "Regular"
 family = "MesloLGM Nerd Font Mono"
+
