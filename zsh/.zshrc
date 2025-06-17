@@ -289,3 +289,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 # Enable vim mode
 # set -o vi
 export MANPAGER='nvim +Man!'
+export ANDROID_HOME="$HOME/Downloads/flutter-install-files/cmdline-tools"
+export PATH="$PATH:$HOME/Downloads/flutter-install-files/cmdline-tools/bin:$HOME/Downloads/flutter-install-files/flutter/bin:$HOME/Downloads/flutter-install-files/cmdline-tools"
+export ANDROID_SDK_ROOT=$HOME/Downloads/flutter-install-files
+export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/bin
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
