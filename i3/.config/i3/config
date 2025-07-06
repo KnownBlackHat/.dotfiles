@@ -75,7 +75,7 @@ bindsym $mod+Shift+q kill
 
 
 # Rofi
-bindsym $mod+space exec --no-startup-id rofi -show combi
+bindsym $mod+space exec --no-startup-id rofi -show drun
 
 # Wallpaper
 bindsym $mod+Shift+n exec --no-startup-id sh ~/.xsessionrc
