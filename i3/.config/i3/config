@@ -15,7 +15,8 @@ exec_always --no-startup-id picom
 exec_always killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec_always --no-startup-id pkill autotiling;/home/knownblackhat/.pyenv/shims/autotiling
-set $wal `curl 'https://wallhaven.cc/api/v1/search?q=digital+art&sorting=random&apikey=CwQ93vajig3xRPSnkFotEsVeEYzRaAp8' -s| jq .data[0].path -r`
+exec_always --no-startup-id /home/knownblackhat/.screenlayout/home.sh
+set $wal `curl 'https://wallhaven.cc/api/v1/search?q=solo+leveling&sorting=random&apikey=CwQ93vajig3xRPSnkFotEsVeEYzRaAp8' -s| jq .data[0].path -r`
 exec_always feh --bg-scale $wal $wal $wal
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -65,7 +66,7 @@ bindsym $mod+Shift+Return exec alacritty --working-directory $(xcwd)
 
 # Screen Shot (scrot)
 bindsym $mod+Shift+Print --release exec scrot --freeze -s /tmp/screenshot.png -e 'xclip -sel clip -t image/png $f'
-bindsym $mod+Print --release exec scrot --freeze -s /tmp/screenshot.png -e 'curl -s -F "image=@$f" https://api.imgur.com/3/upload | tee /tmp/imgur.log |jq -r .data.link | xclip -selection clipboard && notify-send "Image 🔗 ready on clipboard 📋"'
+bindsym $mod+Print --release exec flameshot gui
 
 # Switch to greeter
 bindsym $mod+Escape exec --no-startup-id dm-tool switch-to-greeter
