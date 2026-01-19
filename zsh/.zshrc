@@ -107,7 +107,7 @@ configure_prompt() {
 			# PROMPT="%B%F{green}%~ ${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))} %B%F{red}➤ "
 			if [ "$EUID" -eq 0 ]; then
             PROMPT='%B%F{white}${GIT_STATUS} %B%F{yellow}%~%F{white}${VIRTUAL_ENV:+  $(basename $VIRTUAL_ENV)} %F{red}➤%{%} '
-			else 
+			else
             PROMPT='%B%F{white}${GIT_STATUS} %B%F{yellow}%~%F{white}${VIRTUAL_ENV:+  $(basename $VIRTUAL_ENV)} %F{green}➤%{%} '
 			fi
             RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)'
@@ -282,8 +282,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 
-[ -s "/usr/share/doc/fzf/examples/completion.zsh" ] && source "/usr/share/doc/fzf/examples/completion.zsh" 
-[ -s "$HOME/.cargo/env" ] && source "$HOME/.cargo/env" 
+[ -s "/usr/share/doc/fzf/examples/completion.zsh" ] && source "/usr/share/doc/fzf/examples/completion.zsh"
+[ -s "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 [ -s "`which pyenv`" ] && eval "$(pyenv init -)"
 
 # Enable vim mode
@@ -300,3 +300,6 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools:/opt/zen
 
 # opencode
 export PATH=/home/knownblackhat/.opencode/bin:$PATH
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+

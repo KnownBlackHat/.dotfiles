@@ -8,11 +8,11 @@ local KnownblackhatGroup = augroup("knownblackhat", {})
 
 local autocmd = vim.api.nvim_create_autocmd
 
-autocmd({ "BufWritePre" }, {
-	group = KnownblackhatGroup,
-	pattern = "*",
-	command = [[%s/\s\+$//e]],
-})
+-- autocmd({ "BufWritePre" }, {
+-- 	group = KnownblackhatGroup,
+-- 	pattern = "*",
+-- 	command = [[%s/\s\+$//e]],
+-- })
 
 autocmd("LspAttach", {
 	group = KnownblackhatGroup,

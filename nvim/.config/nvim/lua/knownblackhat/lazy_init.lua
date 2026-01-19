@@ -26,7 +26,7 @@ require("lazy").setup({
 	spec = "knownblackhat.lazy",
 	change_detection = { notify = false },
 	install = { colorscheme = { "habamax" } },
-	checker = { enabled = true },
+	checker = { enabled = true, notify = false },
 })
 
 -- Setup lazy.nvim
