@@ -294,3 +294,9 @@ export PATH="$PATH:$HOME/Downloads/flutter-install-files/cmdline-tools/bin:$HOME
 export ANDROID_SDK_ROOT=$HOME/Downloads/flutter-install-files
 export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/bin
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools:/opt/zen
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# opencode
+export PATH=/home/knownblackhat/.opencode/bin:$PATH

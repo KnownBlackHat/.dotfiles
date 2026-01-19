@@ -15,8 +15,8 @@ exec_always --no-startup-id picom
 exec_always killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec_always --no-startup-id pkill autotiling;/home/knownblackhat/.pyenv/shims/autotiling
-exec_always --no-startup-id /home/knownblackhat/.screenlayout/home.sh
-set $wal `curl 'https://wallhaven.cc/api/v1/search?q=solo+leveling&sorting=random&apikey=CwQ93vajig3xRPSnkFotEsVeEYzRaAp8' -s| jq .data[0].path -r`
+exec_always --no-startup-id sleep 3 && /home/knownblackhat/.screenlayout/home.sh
+set $wal `curl 'https://wallhaven.cc/api/v1/search?q=blue+lock&sorting=random' -s| jq .data[0].path -r`
 exec_always feh --bg-scale $wal $wal $wal
 
 # Font for window titles. Will also be used by the bar unless a different font
