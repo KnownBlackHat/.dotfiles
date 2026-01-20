@@ -75,7 +75,7 @@ function ColorMyPencils(color)
 	vim.api.nvim_set_hl(0, "Comment", { fg = palette.comment, italic = true })
 
 	-- 3. INTERFACE
-	vim.api.nvim_set_hl(0, "LineNr", { fg = "#3b4261" })
+	vim.api.nvim_set_hl(0, "LineNr", { fg = palette.comment })
 	vim.api.nvim_set_hl(0, "CursorLineNr", { fg = palette.action, bold = true })
 	vim.api.nvim_set_hl(0, "Visual", { bg = "#1e3a5f" })
 
