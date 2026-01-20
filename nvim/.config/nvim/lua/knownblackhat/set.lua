@@ -70,8 +70,8 @@ function ColorMyPencils(color)
 	vim.api.nvim_set_hl(0, "Identifier", { fg = palette.variable }) -- Variables = Blue
 	vim.api.nvim_set_hl(0, "Function", { fg = palette.logic, bold = true }) -- Functions = Yellow
 	vim.api.nvim_set_hl(0, "Statement", { fg = "yellow", bold = true })
-	vim.api.nvim_set_hl(0, "Type", { fg = "#00ff00", italic = true }) -- Types = Green
-	vim.api.nvim_set_hl(0, "String", { fg = palette.type }) -- Strings = Green
+	vim.api.nvim_set_hl(0, "Type", { fg = palette.type, italic = true }) -- Types = Green
+	vim.api.nvim_set_hl(0, "String", { fg = "#b1fcd5" }) -- Strings = Green
 	vim.api.nvim_set_hl(0, "Comment", { fg = palette.comment, italic = true })
 
 	-- 3. INTERFACE
