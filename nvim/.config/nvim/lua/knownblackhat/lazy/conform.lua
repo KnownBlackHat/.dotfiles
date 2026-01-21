@@ -1,6 +1,7 @@
 return {
 	{
 		"stevearc/conform.nvim",
+		tag = "v8.4.0",
 		config = function()
 			require("conform").setup({
 				formatters_by_ft = {
@@ -8,19 +9,20 @@ return {
 					-- Conform will run multiple formatters sequentially
 					python = { "isort", "black" },
 					-- Use a sub-list to run only the first available formatter
-					javascript = { { "prettier" } },
-					typescript = { { "prettier" } },
+					javascript = { "prettier" },
+					typescript = { "prettier" },
 				},
 				format_on_save = {
 					-- These options will be passed to conform.format()
 					timeout_ms = 5000,
 					lsp_format = "fallback",
+					stop_after_first = true,
 				},
 			})
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				pattern = "*",
 				callback = function(args)
-					require("conform").format({ bufnr = args.buf })
+					require("conform").format({ bufnr = args.buf, stop_after_first = true })
 				end,
 			})
 		end,
