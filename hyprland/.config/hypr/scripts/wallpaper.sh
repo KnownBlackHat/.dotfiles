@@ -13,7 +13,7 @@ MONITORS=$(hyprctl monitors | awk '/^Monitor/ {print $2}')
 for M in $MONITORS; do
   SAFE_M=$(echo "$M" | tr -cd 'A-Za-z0-9_-')
 
-  URL=$(curl -s "https://wallhaven.cc/api/v1/search?q=blue+lock&sorting=random" \
+  URL=$(curl -s "https://wallhaven.cc/api/v1/search?q=obito&sorting=random" \
     | jq -r '.data[0].path')
 
   FILE="$HOME/.cache/wallhaven-$SAFE_M.jpg"
