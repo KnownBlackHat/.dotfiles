@@ -305,4 +305,4 @@ export PATH=/home/knownblackhat/.cargo/bin:$PATH
 export PATH=/home/knownblackhat/.opencode/bin:$PATH
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
