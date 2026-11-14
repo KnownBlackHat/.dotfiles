@@ -2,7 +2,7 @@ return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
-		-- "stevearc/conform.nvim",  --Will get loaded lazily
+		-- conform loads lazily from its own file
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"hrsh7th/cmp-nvim-lsp",
@@ -18,87 +18,105 @@ return {
 	config = function()
 		local cmp = require("cmp")
 		local cmp_lsp = require("cmp_nvim_lsp")
+
+		-- Applied to every server, so cmp completion works everywhere
 		local capabilities = vim.tbl_deep_extend(
 			"force",
 			{},
 			vim.lsp.protocol.make_client_capabilities(),
 			cmp_lsp.default_capabilities()
 		)
+		vim.lsp.config("*", { capabilities = capabilities })
+
+		-- Per-server settings (replaces the old `handlers` block)
+		vim.lsp.config("lua_ls", {
+			settings = {
+				Lua = {
+					diagnostics = { globals = { "vim" } },
+					format = {
+						enable = true,
+						defaultConfig = {
+							indent_style = "space",
+							indent_size = "2",
+						},
+					},
+				},
+			},
+		})
+
+		vim.lsp.config("tailwindcss", {
+			filetypes = {
+				"html",
+				"css",
+				"scss",
+				"javascript",
+				"javascriptreact",
+				"typescript",
+				"typescriptreact",
+				"vue",
+				"svelte",
+				"heex",
+			},
+		})
+
+		vim.lsp.config("zls", {
+			settings = {
+				zls = {
+					enable_inlay_hints = true,
+					enable_snippets = true,
+					warn_style = true,
+				},
+			},
+		})
+		vim.g.zig_fmt_parse_errors = 0
+		vim.g.zig_fmt_autosave = 0
+
+		-- pyright: type checking + completion, but NO go-to-definition
+		vim.lsp.config("pyright", {
+			on_init = function(client)
+				client.server_capabilities.definitionProvider = false
+			end,
+			settings = {
+				python = { analysis = { autoImportCompletions = true } },
+			},
+		})
+
+		-- pylsp: jedi completion + definitions only
+		vim.lsp.config("pylsp", {
+			settings = {
+				pylsp = {
+					plugins = {
+						jedi_completion = { enabled = true },
+						jedi_definition = {
+							enabled = true,
+							follow_imports = true,
+							follow_builtin_imports = true,
+						},
+						jedi_hover = { enabled = false },
+						pycodestyle = { enabled = false },
+						pyflakes = { enabled = false },
+						mccabe = { enabled = false },
+						pylint = { enabled = false },
+						autopep8 = { enabled = false },
+						yapf = { enabled = false },
+					},
+				},
+			},
+		})
 
 		require("fidget").setup({})
 		require("mason").setup({ PATH = "append" })
 		require("mason-lspconfig").setup({
+			-- LSP servers only. Formatters go in mason-tools.lua
 			ensure_installed = {
 				"lua_ls",
 				"vtsls",
 				"tailwindcss",
-				-- 'tsserver',
-				-- "rust_analyzer",
 				"pylsp",
 				"pyright",
 			},
+			-- rustaceanvim manages rust-analyzer itself
 			automatic_enable = { exclude = { "rust_analyzer" } },
-			handlers = {
-				function(server_name) -- default handler (optional)
-					require("lspconfig")[server_name].setup({
-						capabilities = capabilities,
-					})
-				end,
-
-				zls = function()
-					local lspconfig = require("lspconfig")
-					lspconfig.zls.setup({
-						root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
-						settings = {
-							zls = {
-								enable_inlay_hints = true,
-								enable_snippets = true,
-								warn_style = true,
-							},
-						},
-					})
-					vim.g.zig_fmt_parse_errors = 0
-					vim.g.zig_fmt_autosave = 0
-				end,
-				["lua_ls"] = function()
-					local lspconfig = require("lspconfig")
-					lspconfig.lua_ls.setup({
-						capabilities = capabilities,
-						settings = {
-							Lua = {
-								format = {
-									enable = true,
-									-- Put format options here
-									-- NOTE: the value should be STRING!!
-									defaultConfig = {
-										indent_style = "space",
-										indent_size = "2",
-									},
-								},
-							},
-						},
-					})
-				end,
-
-				["tailwindcss"] = function()
-					local lspconfig = require("lspconfig")
-					lspconfig.tailwindcss.setup({
-						capabilities = capabilities,
-						filetypes = {
-							"html",
-							"css",
-							"scss",
-							"javascript",
-							"javascriptreact",
-							"typescript",
-							"typescriptreact",
-							"vue",
-							"svelte",
-							"heex",
-						},
-					})
-				end,
-			},
 		})
 
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -106,7 +124,7 @@ return {
 		cmp.setup({
 			snippet = {
 				expand = function(args)
-					require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+					require("luasnip").lsp_expand(args.body)
 				end,
 			},
 			mapping = cmp.mapping.preset.insert({
@@ -116,24 +134,18 @@ return {
 				["<C-Space>"] = cmp.mapping.complete(),
 			}),
 			sources = cmp.config.sources({
-				{ name = "copilot", group_index = 2 },
 				{ name = "nvim_lsp" },
-				{ name = "luasnip" }, -- For luasnip users.
+				{ name = "luasnip" },
 			}, {
 				{ name = "buffer" },
 			}),
 			window = {
-				completion = cmp.config.window.bordered({
-					border = "rounded",
-				}),
-				documentation = cmp.config.window.bordered({
-					border = "rounded",
-				}),
+				completion = cmp.config.window.bordered({ border = "rounded" }),
+				documentation = cmp.config.window.bordered({ border = "rounded" }),
 			},
 		})
 
 		vim.diagnostic.config({
-			-- update_in_insert = true,
 			virtual_text = true,
 			float = {
 				focusable = false,
