@@ -31,7 +31,7 @@ vim.opt.updatetime = 50
 
 vim.g.mapleader = " "
 
-vim.g.airline_powerline_fonts = 1
+-- vim.g.airline_powerline_fonts = 1
 
 vim.g.nvim_tree_ignore = { ".git", "node_modules", ".cache" }
 
@@ -44,7 +44,15 @@ vim.g.copilot_enabled = false
 
 vim.g.netrw_banner = 0
 vim.g.netrw_browse_split = 0
+vim.opt.signcolumn = "yes"
 vim.g.netrw_winsize = 25
+vim.o.winborder = "rounded"
+vim.opt.cursorline = true
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "#161b22" })
+vim.opt.laststatus = 3
+vim.opt.inccommand = "split"
+vim.opt.updatetime = 250
+
 vim.opt.spell = false
 function ColorMyPencils(color)
 	color = color or "default"

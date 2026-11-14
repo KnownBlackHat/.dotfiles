@@ -36,7 +36,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
-vim.keymap.set("n", "<leader><Tab>", vim.lsp.buf.hover)
+vim.keymap.set("n", "<leader><Tab>", function()
+	vim.lsp.buf.hover()
+end)
 
 vim.g.multi_cursor_quit_key = "<Tab>"
 

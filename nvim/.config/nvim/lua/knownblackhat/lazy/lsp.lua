@@ -1,7 +1,8 @@
 return {
 	"neovim/nvim-lspconfig",
+	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
-		"stevearc/conform.nvim",
+		-- "stevearc/conform.nvim",  --Will get loaded lazily
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"hrsh7th/cmp-nvim-lsp",
@@ -15,9 +16,6 @@ return {
 	},
 
 	config = function()
-		require("conform").setup({
-			formatters_by_ft = {},
-		})
 		local cmp = require("cmp")
 		local cmp_lsp = require("cmp_nvim_lsp")
 		local capabilities = vim.tbl_deep_extend(
@@ -39,14 +37,13 @@ return {
 				"pylsp",
 				"pyright",
 			},
-            automatic_enable = {exclude = {"rust_analyzer"}},
+			automatic_enable = { exclude = { "rust_analyzer" } },
 			handlers = {
 				function(server_name) -- default handler (optional)
 					require("lspconfig")[server_name].setup({
 						capabilities = capabilities,
 					})
 				end,
-
 
 				zls = function()
 					local lspconfig = require("lspconfig")
@@ -82,7 +79,6 @@ return {
 						},
 					})
 				end,
-
 
 				["tailwindcss"] = function()
 					local lspconfig = require("lspconfig")
