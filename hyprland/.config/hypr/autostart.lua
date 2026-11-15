@@ -1,0 +1,7 @@
+hl.on("hyprland.start", function()
+    hl.exec_cmd("alacritty")
+    hl.exec_cmd("waybar")
+    hl.exec_cmd("~/.config/hypr/scripts/wallpaper.sh")
+    hl.exec_cmd("[workspace 1 silent] zen-browser")
+    hl.exec_cmd("~/.config/hypr/scripts/browser-window.sh")
+end)

@@ -1,0 +1,3 @@
+-- TODO(hyprvalidate convert): 'workspace' isn't a modeled top-level directive (hyprland.conf line 31)
+-- TODO(hyprvalidate convert): 'workspace' isn't a modeled top-level directive (hyprland.conf line 32)
+-- TODO(hyprvalidate convert): 'workspace' isn't a modeled top-level directive (hyprland.conf line 33)
