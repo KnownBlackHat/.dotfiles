@@ -7,12 +7,86 @@ hl.bind("SUPER + V", hl.dsp.window.float())
 hl.bind("SUPER + Space", hl.dsp.exec_cmd("rofi -show drun"))
 -- TODO(hyprvalidate convert): unrecognized old dispatcher 'pseudo' - no confident rename, convert manually (hyprland.conf line 255)
 -- TODO(hyprvalidate convert): 'fullscreen' has no modeled argument shape yet (hyprland.conf line 257)
--- TODO(hyprvalidate convert): unrecognized old dispatcher 'movecurrentworkspacetomonitor' - no confident rename, convert manually (hyprland.conf line 258)
--- TODO(hyprvalidate convert): unrecognized old dispatcher 'movecurrentworkspacetomonitor' - no confident rename, convert manually (hyprland.conf line 259)
--- TODO(hyprvalidate convert): unrecognized old dispatcher 'movecurrentworkspacetomonitor' - no confident rename, convert manually (hyprland.conf line 260)
--- TODO(hyprvalidate convert): unrecognized old dispatcher 'focusmonitor' - no confident rename, convert manually (hyprland.conf line 261)
--- TODO(hyprvalidate convert): unrecognized old dispatcher 'focusmonitor' - no confident rename, convert manually (hyprland.conf line 262)
--- TODO(hyprvalidate convert): unrecognized old dispatcher 'focusmonitor' - no confident rename, convert manually (hyprland.conf line 263)
+hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
+hl.bind("SUPER + P", hl.dsp.window.pseudo())
+
+hl.workspace_rule({ workspace = "1", monitor = "DP-1", default = true })
+hl.workspace_rule({ workspace = "2", monitor = "eDP-1", default = true })
+hl.workspace_rule({ workspace = "3", monitor = "HDMI-A-1", default = true })
+hl.bind("ALT + 1", hl.dsp.focus({ monitor = "DP-1" }))
+hl.bind("ALT + 2", hl.dsp.focus({ monitor = "eDP-1" }))
+hl.bind("ALT + 3", hl.dsp.focus({ monitor = "HDMI-A-1" }))
+hl.bind("ALT + SHIFT + 1", hl.dsp.workspace.move({ monitor = "DP-1" }))
+hl.bind("ALT + SHIFT + 2", hl.dsp.workspace.move({ monitor = "eDP-1" }))
+hl.bind("ALT + SHIFT + 3", hl.dsp.workspace.move({ monitor = "HDMI-A-1" }))
+
+function Pprint(text)
+	hl.notification.create({
+		text = text,
+		timeout = 3000, -- milliseconds
+		icon = "info", -- none, warn, info, hint, err, ok, confused
+		font_size = 15,
+	})
+end
+
+-- TODO: Cycle to recent monitor & tab
+local current_monitor = nil
+local previous_monitor = nil
+
+hl.on("hyprland.start", function()
+	current_monitor = hl.get_active_monitor().name
+end)
+
+hl.on("monitor.focused", function(monitor)
+	if not current_monitor then
+		return
+	end
+	if monitor.name ~= current_monitor.name then
+		previous_monitor = current_monitor
+		current_monitor = monitor.name
+	end
+end)
+
+hl.bind("ALT + SHIFT + TAB", function()
+	if previous_monitor then
+		hl.dispatch(hl.dsp.focus({ monitor = previous_monitor }))
+	end
+end)
+
+-- TODO: Cycle through all workspace in active monitor
+hl.bind("ALT + TAB", function()
+	local monitor = hl.get_active_monitor()
+	local current = hl.get_active_workspace()
+
+	local ids = {}
+	for _, ws in ipairs(hl.get_workspaces()) do
+		if ws.monitor == monitor and ws.special ~= true then
+			table.insert(ids, ws.id)
+		end
+	end
+
+	if #ids == 0 then
+		return
+	end
+
+	table.sort(ids)
+
+	-- find the current workspace in the list
+	local index = 1
+	for i, id in ipairs(ids) do
+		if not current then
+			return
+		end
+		if id == current.id then
+			index = i
+			break
+		end
+	end
+
+	local next_id = ids[index % #ids + 1]
+	hl.dispatch(hl.dsp.focus({ workspace = tostring(next_id) }))
+end)
+
 hl.bind("SUPER + SHIFT + R", hl.dsp.exec_cmd("pkill mpvpaper;~/.config/hypr/scripts/wallpaper.sh"))
 hl.bind("SUPER + Print", hl.dsp.exec_cmd("grim -g $(slurp) -t png - | wl-copy -t image/png"))
 hl.bind(
@@ -21,10 +95,12 @@ hl.bind(
 		workspace = "previous",
 	})
 )
--- TODO(hyprvalidate convert): unrecognized old dispatcher 'resizeactive' - no confident rename, convert manually (hyprland.conf line 270)
--- TODO(hyprvalidate convert): unrecognized old dispatcher 'resizeactive' - no confident rename, convert manually (hyprland.conf line 271)
--- TODO(hyprvalidate convert): unrecognized old dispatcher 'resizeactive' - no confident rename, convert manually (hyprland.conf line 272)
--- TODO(hyprvalidate convert): unrecognized old dispatcher 'resizeactive' - no confident rename, convert manually (hyprland.conf line 273)
+
+hl.bind("SUPER + SHIFT + L", hl.dsp.window.resize({ x = 30, y = 0, relative = true }))
+hl.bind("SUPER + SHIFT + H", hl.dsp.window.resize({ x = -30, y = 0, relative = true }))
+hl.bind("SUPER + SHIFT + K", hl.dsp.window.resize({ x = 0, y = -30, relative = true }))
+hl.bind("SUPER + SHIFT + J", hl.dsp.window.resize({ x = 0, y = 30, relative = true }))
+
 hl.bind(
 	"SUPER + H",
 	hl.dsp.focus({
