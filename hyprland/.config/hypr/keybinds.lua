@@ -5,8 +5,6 @@ hl.bind("SUPER + SHIFT + Escape", hl.dsp.exit())
 hl.bind("SUPER + E", hl.dsp.exec_cmd("dolphin"))
 hl.bind("SUPER + V", hl.dsp.window.float())
 hl.bind("SUPER + Space", hl.dsp.exec_cmd("rofi -show drun"))
--- TODO(hyprvalidate convert): unrecognized old dispatcher 'pseudo' - no confident rename, convert manually (hyprland.conf line 255)
--- TODO(hyprvalidate convert): 'fullscreen' has no modeled argument shape yet (hyprland.conf line 257)
 hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind("SUPER + P", hl.dsp.window.pseudo())
 
@@ -29,7 +27,7 @@ function Pprint(text)
 	})
 end
 
--- TODO: Cycle to recent monitor & tab
+-- Cycle to recent monitor
 local current_monitor = nil
 local previous_monitor = nil
 
@@ -53,7 +51,7 @@ hl.bind("ALT + SHIFT + TAB", function()
 	end
 end)
 
--- TODO: Cycle through all workspace in active monitor
+-- Cycle through all workspace in active monitor
 hl.bind("ALT + TAB", function()
 	local monitor = hl.get_active_monitor()
 	local current = hl.get_active_workspace()
@@ -88,7 +86,7 @@ hl.bind("ALT + TAB", function()
 end)
 
 hl.bind("SUPER + SHIFT + R", hl.dsp.exec_cmd("pkill mpvpaper;~/.config/hypr/scripts/wallpaper.sh"))
-hl.bind("SUPER + Print", hl.dsp.exec_cmd("grim -g $(slurp) -t png - | wl-copy -t image/png"))
+hl.bind("SUPER + Print", hl.dsp.exec_cmd('grim -g "$(slurp)" -t png - | wl-copy -t image/png'))
 hl.bind(
 	"SUPER + Tab",
 	hl.dsp.focus({
