@@ -35,7 +35,6 @@ hl.config({
 		},
 	},
 })
--- TODO(hyprvalidate convert): 'animations.enabled' = 'no' doesn't confidently match its expected type (boolean); 'animations.bezier' is not a known Hyprland config key; 'animations.bezier' is not a known Hyprland config key; 'animations.bezier' is not a known Hyprland config key; 'animations.bezier' is not a known Hyprland config key; 'animations.bezier' is not a known Hyprland config key; 'animations.animation' is not a known Hyprland config key; 'animations.animation' is not a known Hyprland config key; 'animations.animation' is not a known Hyprland config key; 'animations.animation' is not a known Hyprland config key; 'animations.animation' is not a known Hyprland config key; 'animations.animation' is not a known Hyprland config key; 'animations.animation' is not a known Hyprland config key; 'animations.animation' is not a known Hyprland config key; 'animations.animation' is not a known Hyprland config key; 'animations.animation' is not a known Hyprland config key; 'animations.animation' is not a known Hyprland config key; 'animations.animation' is not a known Hyprland config key; 'animations.animation' is not a known Hyprland config key; 'animations.animation' is not a known Hyprland config key; 'animations.animation' is not a known Hyprland config key; 'animations.animation' is not a known Hyprland config key; 'animations.animation' is not a known Hyprland config key (hyprland.conf line 149)
 hl.config({
 	animations = {
 		enabled = false,
