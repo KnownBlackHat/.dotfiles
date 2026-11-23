@@ -21,9 +21,13 @@ autocmd("LspAttach", {
 		vim.keymap.set("n", "gd", function()
 			vim.lsp.buf.definition()
 		end, opts)
+		vim.keymap.set("n", "gD", function()
+			vim.lsp.buf.type_definition()
+		end, opts)
 		vim.keymap.set("n", "K", function()
 			vim.lsp.buf.hover({
 				border = "rounded",
+				focusable = true,
 			})
 		end, opts)
 		vim.keymap.set("n", "<leader>vws", function()
