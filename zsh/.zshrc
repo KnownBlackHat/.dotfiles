@@ -1,4 +1,4 @@
-# ZSH_AUTOSUGGEST_STRATEGY=(history)
+# ZSH_AUTOSUGGEST_STRATEGY=(history)zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # ~/.zshrc file for zsh interactive shells.
 # see /usr/share/doc/zsh/examples/zshrc for examples
@@ -108,9 +108,9 @@ configure_prompt() {
             # PROMPT=$'${debian_chroot:+($debian_chroot)}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%B%F{%(#.red.blue)}%n@%m%b%F{reset}:%B%F{%(#.blue.green)}%~%b%F{reset}%(#.#.$) '
 			# PROMPT="%B%F{green}%~ ${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))} %B%F{red}➤ "
 			if [ "$EUID" -eq 0 ]; then
-            PROMPT='%b%F{white}[%m]%B%F{white}${GIT_STATUS} %B%F{yellow}%~%F{white}${VIRTUAL_ENV:+  $(basename $VIRTUAL_ENV)} %F{red}➤%{%} '
+            PROMPT='%b%F{white}[%m] %B%F{white}${GIT_STATUS} %B%F{yellow}%~%F{white}${VIRTUAL_ENV:+  $(basename $VIRTUAL_ENV)} %F{red}➤%{%} '
 			else
-            PROMPT='%b%F{white}[%m]%B%F{white}${GIT_STATUS} %B%F{yellow}%~%F{white}${VIRTUAL_ENV:+  $(basename $VIRTUAL_ENV)} %F{green}➤%{%} '
+            PROMPT='%b%F{white}[%m] %B%F{white}${GIT_STATUS} %B%F{yellow}%~%F{white}${VIRTUAL_ENV:+  $(basename $VIRTUAL_ENV)} %F{green}➤%{%} '
 			fi
             RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)'
             # RPROMPT=
